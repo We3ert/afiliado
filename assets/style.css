@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh; /* Garante que o fundo ocupe 100% da altura da tela */
+  
+  /* 20% laranja no topo e o resto branco */
+  background: linear-gradient(to bottom, #EE4D2D 0%, #FFFFFF 30%);
+  background-repeat: no-repeat;
+}
+
+nav{
+    background-color: #ffffffad;
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    height: 55px;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+}
+
+main{
+    padding-top: 60px;
+}
+
+h1{
+    font-size: 50px;
+}
+
+h2{
+    font-size: 70px;
+    width: 60%;
+    margin-bottom: 20px;
+
+}
+
+.centro{
+    display: grid;
+    place-items: center;
+
+}
+
+p{
+    font-size: 30px;
+    width: 60%;
+    margin-bottom: 20px;
+}
+
+img{
+    border-radius: 70px;
+    margin-bottom: 30px;
+}
+
+a{
+  background-color: #25D366;
+  color: #FFFFFF;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  margin-bottom: 20px;
+
+  /* Espaçamento e Formato */
+  padding: 20px 24px;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Sombra leve */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+  /* Animação suave para o hover */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efeito ao passar o mouse */
+a:hover {
+  background-color: #1EBE57; /* Verde um pouco mais escuro */
+  transform: translateY(-2px); /* Sobem 2px */
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+
