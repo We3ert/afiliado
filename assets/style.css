@@ -6,84 +6,173 @@
 
 body {
   margin: 0;
-  min-height: 100vh; /* Garante que o fundo ocupe 100% da altura da tela */
-  
-  /* 20% laranja no topo e o resto branco */
-  background: linear-gradient(to bottom, #EE4D2D 0%, #FFFFFF 30%);
+  min-height: 100vh;
+  /* Gradiente ajustado */
+  background: linear-gradient(to bottom, #EE4D2D 0%, #FFFFFF 40%);
   background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
 }
 
-nav{
-    background-color: #ffffffad;
-    position: fixed;
-    top: 0%;
-    width: 100%;
-    height: 55px;
-    z-index: 1000;
-    display: grid;
-    place-items: center;
+nav {
+  background-color: rgba(255, 255, 255, 0.68);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 55px;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
 }
 
-main{
-    padding-top: 60px;
+main {
+  padding: 70px 20px 20px 20px; /* Adicionado padding lateral para o texto não encostar na borda */
 }
 
-h1{
-    font-size: 50px;
+/* Tipografia responsiva usando clamp() */
+h1 {
+  font-size: clamp(28px, 5vw, 50px);
 }
 
-h2{
-    font-size: 70px;
-    width: 60%;
-    margin-bottom: 20px;
-
+h2 {
+  font-size: clamp(32px, 6vw, 70px);
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.centro{
-    display: grid;
-    place-items: center;
-
+h3 {
+  font-size: clamp(24px, 4vw, 40px);
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-p{
-    font-size: 30px;
-    width: 60%;
-    margin-bottom: 20px;
+span {
+  display: block;
+  text-align: center;
 }
 
-img{
-    border-radius: 70px;
-    margin-bottom: 30px;
+.centro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-a{
+.principal {
+  font-size: clamp(18px, 3vw, 30px);
+  width: 90%;          /* No mobile ocupa quase toda a largura */
+  max-width: 800px;    /* No PC limita a um tamanho agradável */
+  margin-bottom: 20px;
+}
+
+img {
+  border-radius: 70px;
+  max-width: 100%;     /* Impede que a imagem passe da largura da tela */
+  height: auto;
+  margin-bottom: 30px;
+}
+
+a {
   background-color: #25D366;
   color: #FFFFFF;
-  font-family: Arial, sans-serif;
   font-weight: bold;
   font-size: 16px;
   text-decoration: none;
   margin-bottom: 20px;
 
-  /* Espaçamento e Formato */
-  padding: 20px 24px;
+  padding: 16px 24px;
   border-radius: 30px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 
-  /* Sombra leve */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-
-  /* Animação suave para o hover */
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Efeito ao passar o mouse */
 a:hover {
-  background-color: #1EBE57; /* Verde um pouco mais escuro */
-  transform: translateY(-2px); /* Sobem 2px */
+  background-color: #1EBE57;
+  transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
 }
 
+/* Seções de conteúdo alinhadas sem usar vh */
+.linha {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  gap: 10px;
+  font-size: clamp(16px, 2.5vw, 25px);
+  margin-bottom: 20px;
+}
 
+.maria {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: clamp(16px, 2.5vw, 25px);
+}
+
+.maria img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-left: 0; /* Removido margin-left em vh */
+  margin-bottom: 0;
+}
+
+/* Rodapé Ajustado */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  margin-top: 30px;
+}
+
+h4 {
+  margin-left: 0; /* Removido margin-left em vh */
+  font-size: 18px;
+}
+
+.rodape {
+  background-color: #ffffff;
+  color: black;
+}
+
+/* ===================================================
+   MEDIA QUERIES (Ajustes específicos para Telas Menores)
+   =================================================== */
+
+/* Tablets (telas até 768px) */
+@media (max-width: 768px) {
+  .principal {
+    width: 95%;
+  }
+
+  footer {
+    padding: 20px;
+  }
+}
+
+/* Celulares (telas até 480px) */
+@media (max-width: 480px) {
+  /* Em telas muito pequenas, empilha itens do rodapé e listas se necessário */
+  footer {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .maria {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  a {
+    width: 100%; /* Botão ocupa a largura total no celular para facilitar o toque */
+    max-width: 320px;
+  }
+}
