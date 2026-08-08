@@ -8,7 +8,7 @@ body {
   margin: 0;
   min-height: 100vh;
   /* Gradiente ajustado */
-  background: linear-gradient(to bottom, #EE4D2D 0%, #FFFFFF 40%);
+  background: linear-gradient(to bottom, #1B523F 0%, #F3EFE6 40%);
   background-repeat: no-repeat;
   font-family: Arial, sans-serif;
 }
@@ -67,7 +67,7 @@ span {
 
 img {
   border-radius: 70px;
-  max-width: 100%;     /* Impede que a imagem passe da largura da tela */
+  max-width: 85%;     /* Impede que a imagem passe da largura da tela */
   height: auto;
   margin-bottom: 30px;
 }
